@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spells</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="https://images.unsplash.com/photo-1646009760741-857b7a005428?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dungeons & Dragons Logo" />
+        </div>
+        <h1>Spells</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="character.html">Character</a></li>
+                <li><a href="spells.html">Spells</a></li>
+                <li><a href="summary.html">Character Summary</a></li>
+                <li><a href="notes.html">Notes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="spells-form">
+<!--
+            <section id="spellcasting-info">
+                <h2>Spellcasting Info</h2>
+                <label for="spellcasting-class">Spellcasting Class:</label>
+                <input type="text" id="spellcasting-class" placeholder="Enter your spellcasting class" />
+
+                <label for="spellcasting-ability">Spellcasting Ability:</label>
+                <input type="text" id="spellcasting-ability" placeholder="Enter spellcasting ability" />
+
+                <label for="spell-save-dc">Spell Save DC:</label>
+                <input type="number" id="spell-save-dc" placeholder="Enter spell save DC" />
+
+                <label for="spell-attack-bonus">Spell Attack Bonus:</label>
+                <input type="number" id="spell-attack-bonus" placeholder="Enter spell attack bonus" />
+            </section>
+-->
+
+            <section id="spells-list">
+                <h2>Spells</h2>
+
+                    <div id="spells-container">
+                        <!-- Spell entries will be dynamically added here -->
+                    </div>
+                
+                <button type="button" id="add-spell">Add Spell</button>
+                <button type="button" id="clear-spells">Clear Spells</button>
+            </section>
+
+            <div class="form-actions">
+                <input type="submit" value="Save Spells">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 D&D Campaign TRAIN MADE IT</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const spellsContainer = document.getElementById('spells-container');
+            const addSpellButton = document.getElementById('add-spell');
+            const clearSpellsButton = document.getElementById('clear-spells');
+            const spellsForm = document.getElementById('spells-form');
+
+            function loadSpells() {
+                const savedSpells = JSON.parse(localStorage.getItem('spells')) || [];
+                savedSpells.forEach(spell => addSpellEntry(spell));
+            }
+
+            function saveSpells() {
+                const spells = Array.from(spellsContainer.querySelectorAll('.spell-entry')).map(entry => {
+                    return {
+                        spellName: entry.querySelector('.spell-name').value,
+                        spellLevel: entry.querySelector('.spell-level').value,
+                        spellDescription: entry.querySelector('.spell-description').value,
+                        spellSlotLevel: entry.querySelector('.spell-slot-level').value,
+                        slotsTotal: entry.querySelector('.slots-total').value,
+                        slotsExpended: entry.querySelector('.slots-expended').value,
+                    };
+                });
+                localStorage.setItem('spells', JSON.stringify(spells));
+            }
+
+            function addSpellEntry(spell = { spellName: '', spellLevel: '', spellDescription: '', spellSlotLevel: '', slotsTotal: '', slotsExpended: '' }) {
+                const div = document.createElement('div');
+                div.classList.add('spell-entry');
+                div.innerHTML = `
+                    <input type="text" class="spell-name" placeholder="Spell Name" value="${spell.spellName}">
+                    <input type="number" class="spell-level" placeholder="Spell Level" value="${spell.spellLevel}">
+                    <input type="text" class="spell-description" placeholder="Spell Description" value="${spell.spellDescription}">
+                    <input type="number" class="spell-slot-level" placeholder="Spell Slot Level" value="${spell.spellSlotLevel}">
+                    <input type="number" class="slots-total" placeholder="Slots Total" value="${spell.slotsTotal}">
+                    <input type="number" class="slots-expended" placeholder="Slots Expended" value="${spell.slotsExpended}">
+                    <button type="button" class="remove-spell">Remove</button>
+                `;
+                spellsContainer.appendChild(div);
+
+                // Attach event listener for remove button
+                div.querySelector('.remove-spell').addEventListener('click', () => {
+                    div.remove();
+                });
+            }
+
+            addSpellButton.addEventListener('click', () => addSpellEntry());
+
+            clearSpellsButton.addEventListener('click', () => {
+                spellsContainer.innerHTML = ''; // Clear all spells
+                localStorage.removeItem('spells'); // Clear saved spells from local storage
+            });
+
+            spellsForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                saveSpells();
+            });
+
+            loadSpells();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                url("https://i.redd.it/3i72n2xxwsdb1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #f0f0f0; /* Light grey for better readability */
+}
+
+/* General Form Input Styles */
+input,
+textarea {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #777; /* Medium border color for better contrast */
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #f0f0f0; /* Light grey text */
+    background-color: #2a2a2a; /* Dark background for inputs */
+}
+
+/* Text Area Styles */
+textarea {
+    font-size: 15px;
+    border-radius: 8px;
+    padding: 12px;
+    resize: vertical;
+    height: auto;
+}
+
+/* Label Styles */
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+    color: #f0f0f0; /* Light grey for labels */
+}
+
+/* Section Styles */
+section {
+    background-color: rgba(35, 35, 35, 0.9); /* Slightly lighter dark background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.6);
+    margin-bottom: 5%;
+}
+
+section:last-child {
+    margin-bottom: 0;
+}
+
+/* Logo Styles */
+#logo {
+    width: 60%;
+    max-width: 320px; /* Slightly larger max-width */
+    margin: 0 auto;
+}
+
+#logo img {
+    width: 100%;
+    height: auto;
+}
+
+/* Hero Banner Styles */
+#hero-banner {
+    text-align: center;
+    padding: 25px;
+    background-color: rgba(0, 0, 0, 0.8); /* Darker banner background */
+    color: #e0e0e0; /* Light grey text */
+    border-radius: 10px;
+}
+
+/* Header Styles */
+header {
+    background: rgba(0, 0, 0, 0.8); /* Keep the background but adjust the opacity */
+    color: #e0e0e0; /* Light grey text for better contrast */
+    padding: 1% 2%; /* Reduced padding for a smaller header */
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.4em; /* Smaller font size */
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 2% 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #e0e0e0; /* Light grey for links */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #c0c0c0; /* Slightly lighter grey for hover */
+}
+
+/* Main Content Styles */
+main {
+    flex: 1;
+    padding: 3%;
+    background: rgba(25, 25, 25, 0.85); /* Darker background */
+    border-radius: 12px;
+    margin: 2% auto;
+    width: 90%;
+    max-width: 1200px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Form Styles */
+textarea {
+    font-size: 15px;
+    width: 100%;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid #777; /* Medium border color */
+    background-color: #2a2a2a; /* Dark background */
+    color: #f0f0f0; /* Light grey text */
+}
+
+textarea:focus {
+    border-color: #999; /* Lighter border color on focus */
+    outline: none;
+}
+
+/* Spell Entry Styles */
+.spell-entry {
+    margin-bottom: 15px;
+    padding: 15px;
+    background-color: rgba(40, 40, 40, 0.9); /* Slightly lighter dark background */
+    border: 1px solid #777; /* Medium border color */
+    border-radius: 10px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.spell-entry input {
+    width: 100%;
+    border: 1px solid #777; /* Medium border color */
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    color: #f0f0f0; /* Light grey text */
+    background-color: #2a2a2a; /* Dark background for inputs */
+}
+
+.spell-entry button {
+    align-self: center;
+    background-color: #c0392b; /* Red button color */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.spell-entry button:hover {
+    background-color: #e74c3c; /* Lighter red for hover */
+}
+
+/* Footer Styles */
+footer {
+    background: rgba(0, 0, 0, 0.9); /* Darker background */
+    color: #e0e0e0; /* Light grey text */
+    padding: 2% 0;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.6);
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.95em; /* Slightly larger font size */
+}
+
+/* Ability Scores and Modifiers Section */
+.attributes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    background-color: rgba(40, 40, 40, 0.9); /* Slightly lighter dark background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+}
+
+.attributes .scores {
+    flex: 1;
+    min-width: calc(33.333% - 20px); /* Allow three items per row */
+    background-color: rgba(50, 50, 50, 0.9); /* Slightly lighter dark background */
+    border-radius: 8px;
+    padding: 15px;
+    color: #f0f0f0; /* Light grey text */
+}
+
+.attributes .scores label {
+    color: #f0f0f0; /* Light grey for labels */
+}
+
+.attributes .scores .score input {
+    width: 100%;
+    font-size: 28px; /* Larger font size */
+    padding: 10px;
+    border: 1px solid #777; /* Medium border color */
+    background-color: #2a2a2a; /* Dark background */
+    color: #f0f0f0; /* Light grey text */
+}
+
+/* Summary Page Styles */
+.proficiency-summary {
+    background-color: rgba(40, 40, 40, 0.9); /* Dark background with slight opacity */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #777; /* Medium border color */
+    color: #f0f0f0; /* Light grey text */
+    margin-top: 20px; /* Margin for spacing */
+}
+
+.proficiency-summary h3 {
+    margin: 0;
+    font-size: 1.2em; /* Font size for header */
+}
+
+.proficiency-summary p {
+    font-size: 1.5em; /* Font size for proficiency bonus */
+    margin: 10px 0 0; /* Margin for spacing */
+}
+.attributes .scores .modifier input {
+    width: 70px;
+    font-size: 20px; /* Larger font size */
+    height: 30px; /* Adjusted height */
+    border: 1px solid #777; /* Medium border color */
+    background-color: #2a2a2a; /* Dark background */
+    color: #f0f0f0; /* Light grey text */
+    text-align: center;
+}
+
+/* Proficiency Bonus Styles */
+.proficiency {
+    background-color: rgba(40, 40, 40, 0.9); /* Slightly lighter dark background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #777; /* Medium border color */
+    color: #f0f0f0; /* Light grey text */
+}
+
+.proficiency label {
+    font-weight: bold;
+}
+
+.proficiency p {
+    margin-top: 10px;
+}
+
+/* Combat Stats Section */
+.combat {
+    background-color: rgba(40, 40, 40, 0.9); /* Slightly lighter dark background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #777; /* Medium border color */
+    color: #f0f0f0; /* Light grey text */
+}
+
+/* Skills Section */
+.skills {
+    background-color: rgba(40, 40, 40, 0.9); /* Slightly lighter dark background */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid #777; /* Medium border color */
+    color: #f0f0f0; /* Light grey text */
+}

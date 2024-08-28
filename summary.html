@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Summary</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="https://images.unsplash.com/photo-1646009760741-857b7a005428?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dungeons & Dragons Logo" />
+        </div>
+        <h1>Character Summary</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="character.html">Character</a></li>
+                <li><a href="spells.html" id="manage-spells-link">Spells</a></li>
+                <li><a href="summary.html">Character Summary</a></li>
+                <li><a href="notes.html">Notes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Character Summary Sections -->
+        <section id="character-summary" class="summary-section">
+            <h2>Character Information</h2>
+            <ul>
+                <li><strong>Name:</strong> <span id="name"></span></li>
+                <li><strong>Level:</strong> <span id="level"></span></li>
+                <li><strong>Class:</strong> <span id="class"></span></li>
+                <li><strong>Background:</strong> <span id="background"></span></li>
+                <li><strong>Race:</strong> <span id="race"></span></li>
+                <li><strong>Alignment:</strong> <span id="alignment"></span></li>
+                <li><strong>Experience Points:</strong> <span id="xp"></span></li>
+                <li><strong>Proficiency Bonus:</strong> <span id="proficiency-bonus"></span></li>
+                
+            </ul>
+        </section>
+
+        <section id="attributes-summary" class="summary-section">
+            <h2>Ability Scores and Modifiers</h2>
+            <ul>
+                <li><strong>Strength:</strong> <span id="strength"></span> (Modifier: <span id="strength-mod"></span>)</li>
+                <li><strong>Dexterity:</strong> <span id="dexterity"></span> (Modifier: <span id="dexterity-mod"></span>)</li>
+                <li><strong>Constitution:</strong> <span id="constitution"></span> (Modifier: <span id="constitution-mod"></span>)</li>
+                <li><strong>Wisdom:</strong> <span id="wisdom"></span> (Modifier: <span id="wisdom-mod"></span>)</li>
+                <li><strong>Intelligence:</strong> <span id="intelligence"></span> (Modifier: <span id="intelligence-mod"></span>)</li>
+                <li><strong>Charisma:</strong> <span id="charisma"></span> (Modifier: <span id="charisma-mod"></span>)</li>
+            </ul>
+        </section>
+
+        <section id="combat-summary" class="summary-section">
+            <h2>Combat Stats</h2>
+            <ul>
+                <li><strong>Armor Class:</strong> <span id="armor-class"></span></li>
+                <li><strong>Initiative:</strong> <span id="initiative"></span></li>
+                <li><strong>Speed:</strong> <span id="speed"></span></li>
+                <li><strong>Max HP:</strong> <span id="max-hp"></span></li>
+                <li><strong>Current HP:</strong> <span id="current-hp"></span></li>
+                <li><strong>Temporary HP:</strong> <span id="temporary-hp"></span></li>
+            </ul>
+        </section>
+
+        <section id="skills-summary" class="summary-section">
+            <h2>Skills</h2>
+            <ul>
+                <li><strong>Acrobatics:</strong> <span id="acrobatics"></span></li>
+                <li><strong>Animal Handling:</strong> <span id="animal-handling"></span></li>
+                <li><strong>Arcana:</strong> <span id="arcana"></span></li>
+                <li><strong>Athletics:</strong> <span id="athletics"></span></li>
+                <li><strong>Deception:</strong> <span id="deception"></span></li>
+                <li><strong>History:</strong> <span id="history"></span></li>
+                <li><strong>Insight:</strong> <span id="insight"></span></li>
+                <li><strong>Intimidation:</strong> <span id="intimidation"></span></li>
+                <li><strong>Investigation:</strong> <span id="investigation"></span></li>
+                <li><strong>Medicine:</strong> <span id="medicine"></span></li>
+                <li><strong>Nature:</strong> <span id="nature"></span></li>
+                <li><strong>Perception:</strong> <span id="perception"></span></li>
+                <li><strong>Performance:</strong> <span id="performance"></span></li>
+                <li><strong>Persuasion:</strong> <span id="persuasion"></span></li>
+                <li><strong>Religion:</strong> <span id="religion"></span></li>
+                <li><strong>Sleight of Hand:</strong> <span id="sleight-of-hand"></span></li>
+                <li><strong>Stealth:</strong> <span id="stealth"></span></li>
+                <li><strong>Survival:</strong> <span id="survival"></span></li>
+            </ul>
+        </section>
+
+        <section id="features-traits-summary" class="summary-section">
+            <h2>Features and Traits</h2>
+            <ul>
+                <li><strong>Class Features:</strong> <span id="class-features"></span></li>
+                <li><strong>Racial Traits:</strong> <span id="racial-traits"></span></li>
+                <li><strong>Feats:</strong> <span id="feats"></span></li>
+            </ul>
+        </section>
+
+        <section id="equipment-summary" class="summary-section">
+            <h2>Equipment</h2>
+            <ul>
+                <li><strong>Weapons:</strong> <span id="weapons"></span></li>
+                <li><strong>Armor:</strong> <span id="armor"></span></li>
+                <li><strong>Gear:</strong> <span id="gear"></span></li>
+            </ul>
+        </section>
+
+        <section id="background-summary" class="summary-section">
+            <h2>Background Details</h2>
+            <ul>
+                <li><strong>Proficiencies and Languages:</strong> <span id="proficiencies"></span></li>
+                <li><strong>Background Features:</strong> <span id="background-features"></span></li>
+            </ul>
+        </section>
+
+        <section id="spells-summary" class="summary-section">
+            <h2>Spells</h2>
+            <div id="spells-container">
+                <!-- Spells will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 D&D Campaign TRAIN MADE IT</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const character = JSON.parse(localStorage.getItem('character')) || {};
+            const spellsContainer = document.getElementById('spells-container');
+
+            Object.keys(character).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = character[key];
+                }
+            });
+
+            function loadSpells() {
+                const savedSpells = JSON.parse(localStorage.getItem('spells')) || [];
+                savedSpells.forEach(spell => {
+                    const spellDiv = document.createElement('div');
+                    spellDiv.classList.add('spell-summary');
+                    spellDiv.innerHTML = `
+                        <p><strong>Name:</strong> ${spell.spellName}</p>
+                        <p><strong>Level:</strong> ${spell.spellLevel}</p>
+                        <p><strong>Description:</strong> ${spell.spellDescription}</p>
+                        <p><strong>Slot Level:</strong> ${spell.spellSlotLevel}</p>
+                        <p><strong>Slots Total:</strong> ${spell.slotsTotal}</p>
+                        <p><strong>Slots Expended:</strong> ${spell.slotsExpended}</p>
+                    `;
+                    spellsContainer.appendChild(spellDiv);
+                });
+            }
+
+            loadSpells();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="https://images.unsplash.com/photo-1646009760741-857b7a005428?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dungeons & Dragons Logo" />
+        </div>
+        <h1>Notes</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="character.html">Character</a></li>
+                <li><a href="spells.html">Spells</a></li>
+                <li><a href="summary.html">Character Summary</a></li>
+                <li><a href="notes.html">Notes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="notes-form">
+            <section id="notes-list">
+                <h2>Notes</h2>
+                <button type="button" id="add-note" aria-label="Add a new note">Add Note</button>
+                <button type="button" id="clear-notes" aria-label="Clear all notes">Clear Notes</button>
+                <div id="notes-container">
+                    <!-- Note entries will be dynamically added here -->
+                </div>
+            </section>
+            <div class="form-actions">
+                <input type="submit" value="Save Notes">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 D&D Campaign TRAIN MADE IT</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const notesContainer = document.getElementById('notes-container');
+            const addNoteButton = document.getElementById('add-note');
+            const clearNotesButton = document.getElementById('clear-notes');
+            const notesForm = document.getElementById('notes-form');
+
+            function loadNotes() {
+                const savedNotes = JSON.parse(localStorage.getItem('notes')) || [];
+                savedNotes.forEach(note => addNoteEntry(note));
+            }
+
+            function saveNotes() {
+                const notes = Array.from(notesContainer.querySelectorAll('.note-entry')).map(entry => {
+                    return {
+                        content: entry.querySelector('.note-content').value
+                    };
+                });
+                localStorage.setItem('notes', JSON.stringify(notes));
+            }
+
+            function addNoteEntry(note = { content: '' }) {
+                const div = document.createElement('div');
+                div.classList.add('note-entry');
+                div.innerHTML = `
+                    <textarea class="note-content" rows="4" placeholder="Enter note">${note.content}</textarea>
+                    <button type="button" class="remove-note" aria-label="Remove this note">Remove</button>
+                `;
+                notesContainer.appendChild(div);
+
+                // Attach event listener for remove button
+                div.querySelector('.remove-note').addEventListener('click', () => {
+                    div.remove();
+                    saveNotes(); // Save after removing a note
+                });
+            }
+
+            addNoteButton.addEventListener('click', () => addNoteEntry());
+
+            clearNotesButton.addEventListener('click', () => {
+                notesContainer.innerHTML = ''; // Clear all notes
+                localStorage.removeItem('notes'); // Clear saved notes from local storage
+            });
+
+            notesForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+                saveNotes();
+            });
+
+            loadNotes();
+        });
+    </script>
+</body>
+
+</html>

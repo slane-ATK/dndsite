@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Sheet</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <img src="https://images.unsplash.com/photo-1646009760741-857b7a005428?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Dungeons & Dragons Logo" />
+        </div>
+        <h1>Character Sheet</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="character.html">Character</a></li>
+                <li><a href="spells.html">Spells</a></li>
+                <li><a href="summary.html">Character Summary</a></li>
+                <li><a href="notes.html">Notes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <form id="character-form">
+            <section id="character-info">
+                <h2>Character Information</h2>
+                <label for="character-name">Name:</label>
+                <input type="text" id="character-name" placeholder="Enter character name" />
+
+                <label for="level">Level:</label>
+                <input type="number" id="level" value="1" min="1" />
+
+                <label for="class">Class:</label>
+                <input type="text" id="class" placeholder="Enter character class" />
+
+                <label for="background">Background:</label>
+                <input type="text" id="background" placeholder="Enter background" />
+
+                <label for="race">Race:</label>
+                <input type="text" id="race" placeholder="Enter race" />
+
+                <label for="alignment">Alignment:</label>
+                <input type="text" id="alignment" placeholder="Enter alignment" />
+
+                <label for="xp">Experience Points:</label>
+                <input type="number" id="xp" value="0" min="0" />
+                
+                <label for="proficiency-bonus">Proficiency Bonus:</label>
+                <input type="number" id="proficiency-bonus" value="2" readonly />
+                <p>As your character gains levels, the proficiency bonus increases.</p>
+                
+                
+            </section>
+
+            <section class="attributes">
+                <h2>Ability Scores and Modifiers</h2>
+                <div class="scores">
+                    <label for="strength">Strength</label>
+                    <ul>
+                        <li>
+                            <div class="score">
+                                <input type="number" id="strength" value="10" min="1" />
+                            </div>
+                            <div class="modifier">
+                                <input type="text" id="strength-mod" value="0" readonly />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="scores">
+                    <label for="dexterity">Dexterity</label>
+                    <ul>
+                        <li>
+                            <div class="score">
+                                <input type="number" id="dexterity" value="10" min="1" />
+                            </div>
+                            <div class="modifier">
+                                <input type="text" id="dexterity-mod" value="0" readonly />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="scores">
+                    <label for="constitution">Constitution</label>
+                    <ul>
+                        <li>
+                            <div class="score">
+                                <input type="number" id="constitution" value="10" min="1" />
+                            </div>
+                            <div class="modifier">
+                                <input type="text" id="constitution-mod" value="0" readonly />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="scores">
+                    <label for="wisdom">Wisdom</label>
+                    <ul>
+                        <li>
+                            <div class="score">
+                                <input type="number" id="wisdom" value="10" min="1" />
+                            </div>
+                            <div class="modifier">
+                                <input type="text" id="wisdom-mod" value="0" readonly />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="scores">
+                    <label for="intelligence">Intelligence</label>
+                    <ul>
+                        <li>
+                            <div class="score">
+                                <input type="number" id="intelligence" value="10" min="1" />
+                            </div>
+                            <div class="modifier">
+                                <input type="text" id="intelligence-mod" value="0" readonly />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="scores">
+                    <label for="charisma">Charisma</label>
+                    <ul>
+                        <li>
+                            <div class="score">
+                                <input type="number" id="charisma" value="10" min="1" />
+                            </div>
+                            <div class="modifier">
+                                <input type="text" id="charisma-mod" value="0" readonly />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="combat">
+                <h2>Combat Stats</h2>
+                <div class="armorclass">
+                    <div>
+                        <label for="armor-class">Armor Class</label>
+                        <input type="number" id="armor-class" value="10" min="0" />
+                        
+                    </div>
+                </div>
+                <div class="initiative">
+                    <div>
+                        <label for="initiative">Initiative</label>
+                        <input type="number" id="initiative" value="0" />
+                    </div>
+                </div>
+                <div class="speed">
+                    <div>
+                        <label for="speed">Speed</label>
+                        <input type="number" id="speed" value="30" min="0" />
+                    </div>
+                </div>
+                <h2>Health</h2>
+                <div class="hp">
+                    <div class="regular">
+                        <div class="max">
+                            <label for="max-hp">Max HP</label>
+                            <input type="number" id="max-hp" value="10" min="0" />
+                        </div>
+                        <div class="current">
+                            <label for="current-hp">Current HP</label>
+                            <input type="number" id="current-hp" value="10" min="0" />
+                        </div>
+                    </div>
+                    <div class="temporary">
+                        <label for="temporary-hp">Temporary HP</label>
+                        <input type="number" id="temporary-hp" value="0" min="0" />
+                    </div>
+                </div>
+            </section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+        <label for="acrobatics">Acrobatics (Dex)</label>
+        <input type="text" id="acrobatics" placeholder="Modifier" />
+        
+        <label for="animal-handling">Animal Handling (Wis)</label>
+        <input type="text" id="animal-handling" placeholder="Modifier" />
+        
+        <label for="arcana">Arcana (Int)</label>
+        <input type="text" id="arcana" placeholder="Modifier" />
+        
+        <label for="athletics">Athletics (Str)</label>
+        <input type="text" id="athletics" placeholder="Modifier" />
+        
+        <label for="deception">Deception (Cha)</label>
+        <input type="text" id="deception" placeholder="Modifier" />
+        
+        <label for="history">History (Int)</label>
+        <input type="text" id="history" placeholder="Modifier" />
+        
+        <label for="insight">Insight (Wis)</label>
+        <input type="text" id="insight" placeholder="Modifier" />
+        
+        <label for="intimidation">Intimidation (Cha)</label>
+        <input type="text" id="intimidation" placeholder="Modifier" />
+        
+        <label for="investigation">Investigation (Int)</label>
+        <input type="text" id="investigation" placeholder="Modifier" />
+        
+        <label for="medicine">Medicine (Wis)</label>
+        <input type="text" id="medicine" placeholder="Modifier" />
+        
+        <label for="nature">Nature (Int)</label>
+        <input type="text" id="nature" placeholder="Modifier" />
+        
+        <label for="perception">Perception (Wis)</label>
+        <input type="text" id="perception" placeholder="Modifier" />
+        
+        <label for="performance">Performance (Cha)</label>
+        <input type="text" id="performance" placeholder="Modifier" />
+        
+        <label for="persuasion">Persuasion (Cha)</label>
+        <input type="text" id="persuasion" placeholder="Modifier" />
+        
+        <label for="religion">Religion (Int)</label>
+        <input type="text" id="religion" placeholder="Modifier" />
+        
+        <label for="sleight-of-hand">Sleight of Hand (Dex)</label>
+        <input type="text" id="sleight-of-hand" placeholder="Modifier" />
+        
+        <label for="stealth">Stealth (Dex)</label>
+        <input type="text" id="stealth" placeholder="Modifier" />
+        
+        <label for="survival">Survival (Wis)</label>
+        <input type="text" id="survival" placeholder="Modifier" />
+    </div>
+</section>
+
+            <section id="features-traits">
+                <h2>Features and Traits</h2>
+                <div class="features-traits">
+                    <label for="class-features">Class Features:</label>
+                    <textarea id="class-features" placeholder="Enter class features"></textarea>
+                </div>
+                <div class="features-traits">
+                    <label for="racial-traits">Racial Traits:</label>
+                    <textarea id="racial-traits" placeholder="Enter racial traits"></textarea>
+                </div>
+                <div class="features-traits">
+                    <label for="feats">Feats:</label>
+                    <textarea id="feats" placeholder="Enter feats"></textarea>
+                </div>
+            </section>
+
+            <section id="equipment">
+                <h2>Equipment</h2>
+                <div class="equipment">
+                    <label for="weapons">Weapons:</label>
+                    <textarea id="weapons" placeholder="Enter weapons"></textarea>
+                </div>
+                <div class="equipment">
+                    <label for="armor">Armor:</label>
+                    <textarea id="armor" placeholder="Enter armor"></textarea>
+                </div>
+                <div class="equipment">
+                    <label for="gear">Gear:</label>
+                    <textarea id="gear" placeholder="Enter gear"></textarea>
+                </div>
+            </section>
+
+            <section id="background">
+                <h2>Background Details</h2>
+                <div class="background">
+                    <label for="proficiencies">Proficiencies and Languages:</label>
+                    <textarea id="proficiencies" placeholder="Enter proficiencies and languages"></textarea>
+                </div>
+                <div class="background">
+                    <label for="background-features">Background Features:</label>
+                    <textarea id="background-features" placeholder="Enter background features"></textarea>
+                </div>
+            </section>
+
+
+            <div class="form-actions">
+                <input type="button" id="save-button" value="Save Character">
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 D&D Campaign TRAIN MADE IT</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('character-form');
+            const saveButton = document.getElementById('save-button');
+            const levelInput = document.getElementById('level');
+            const proficiencyBonusInput = document.getElementById('proficiency-bonus');
+
+            function loadCharacter() {
+                const savedCharacter = JSON.parse(localStorage.getItem('character')) || {};
+                Object.keys(savedCharacter).forEach(key => {
+                    const input = document.getElementById(key);
+                    if (input) {
+                        input.value = savedCharacter[key];
+                    }
+                });
+                updateModifiers(); // Update modifiers based on loaded scores
+                updateProficiencyBonus(); // Update proficiency bonus based on loaded level
+            }
+
+            function saveCharacter() {
+                const formData = {};
+                document.querySelectorAll('#character-form input, #character-form textarea').forEach(input => {
+                    formData[input.id] = input.value;
+                });
+                localStorage.setItem('character', JSON.stringify(formData));
+            }
+
+            function updateModifiers() {
+                document.querySelectorAll('.attributes .scores').forEach(scoreDiv => {
+                    const scoreInput = scoreDiv.querySelector('input[type="number"]');
+                    const modifierInput = scoreDiv.querySelector('.modifier input');
+                    if (scoreInput && modifierInput) {
+                        const score = parseInt(scoreInput.value) || 0;
+                        modifierInput.value = `+${Math.floor((score - 10) / 2)}`;
+                    }
+                });
+            }
+
+            function updateProficiencyBonus() {
+                const level = parseInt(levelInput.value) || 1;
+                let proficiencyBonus = 2;
+
+                if (level >= 5 && level <= 8) {
+                    proficiencyBonus = 3;
+                } else if (level >= 9 && level <= 12) {
+                    proficiencyBonus = 4;
+                } else if (level >= 13 && level <= 16) {
+                    proficiencyBonus = 5;
+                } else if (level >= 17 && level <= 20) {
+                    proficiencyBonus = 6;
+                }
+
+                proficiencyBonusInput.value = proficiencyBonus;
+            }
+
+            saveButton.addEventListener('click', () => {
+                saveCharacter();
+                alert('Character data saved!');
+            });
+
+            document.querySelectorAll('.attributes .scores input[type="number"]').forEach(input => {
+                input.addEventListener('input', updateModifiers);
+            });
+
+            levelInput.addEventListener('input', updateProficiencyBonus);
+
+            loadCharacter();
+            updateModifiers(); // Initialize modifiers based on default values
+            updateProficiencyBonus(); // Initialize proficiency bonus based on default level
+        });
+    </script>
+</body>
+
+</html>
